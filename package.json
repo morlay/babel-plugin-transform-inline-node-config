@@ -1,0 +1,35 @@
+{
+  "name": "babel-plugin-transform-inline-node-config",
+  "description": "replace `process.env.NODE_CONFIG` with config provided by node-config",
+  "version": "0.0.1",
+  "main": "./lib/index.js",
+  "files": [
+    "lib/",
+    "src/"
+  ],
+  "scripts": {
+    "mocha": "mocha --compilers .:babel-core/register src/__tests__/*.spec.js",
+    "lint": "eslint src/ --fix",
+    "test": "npm run lint && npm run mocha",
+    "build": "babel src/ --ignore __*__ --out-dir lib/",
+    "prepublish": "npm run build"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "config": "*"
+  },
+  "devDependencies": {
+    "@morlay/babel-presets": "0.2.x",
+    "@morlay/eslint-config": "0.2.x",
+    "@morlay/test-utils": "0.2.x"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/morlay/babel-plugin-transform-inline-node-config.git"
+  },
+  "bugs": {
+    "url": "https://github.com/morlay/babel-plugin-transform-inline-node-config/issues"
+  },
+  "homepage": "https://github.com/morlay/babel-plugin-transform-inline-node-config#readme"
+}
